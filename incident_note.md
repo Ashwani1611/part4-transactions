@@ -1,19 +1,13 @@
 # Incident Note
 
 ## What happened
-a developer ran an UPDATE on submissions table without a WHERE clause.
-the query was meant to fix one wrong score.
-but it updated all 2501 rows and set every score to 0.
+a developer ran an UPDATE on submissions table without a WHERE clause.The query was meant to fix one wrong score.but it updated all 2501 rows and set every score to 0.
 
 ## What was affected
-all 2501 submission scores became 0.
-students lost their correct scores.
-leaderboards and reports became completely wrong.
+all 2501 submission scores became 0.students lost their correct scores.leaderboards and reports became completely wrong.
 
 ## How it could be detected
-a SELECT after UPDATE would show all scores as 0.
-monitoring tools would flag that all rows changed at once.
-comparing with a backup would show the difference.
+a SELECT after UPDATE would show all scores as 0.monitoring tools would flag that all rows changed at once.comparing with a backup would show the difference.
 
 ## How rollback could have helped
 if the developer used a transaction like this:

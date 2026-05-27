@@ -20,7 +20,7 @@ COMMIT;
 SELECT * FROM submissions WHERE submission_id = 'SUB999001';
 SELECT * FROM test_results WHERE submission_id = 'SUB999001';
 
--- Scenario 2 - course enrollment is created and then rolled back due to invalid data
+-- Scenario 2  course enrollment is created and then rolled back due to invalid data
 
 BEGIN TRANSACTION;
 
@@ -33,7 +33,7 @@ ROLLBACK;
 -- verify nothing was inserted
 SELECT * FROM enrollments WHERE enrollment_id = 'E99999';
 
--- Scenario 3 - score correction with savepoint and partial rollback
+-- Scenario 3 score correction with savepoint and partial rollback
 
 BEGIN TRANSACTION;
 
